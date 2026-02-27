@@ -35,7 +35,8 @@ export default function Product() {
 
     // dynamic import of animejs for client-side animation
     try {
-      const anime = (await import('animejs/lib/anime.es.js')).default;
+      const animeModule = await import('animejs');
+      const anime = animeModule.default || animeModule;
 
       // pulse the cart button in header
       anime({
