@@ -3,32 +3,111 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Leezo</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Leezo Clothing</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #fafafa;
+      }
+      header {
+        background: #fff;
+        padding: 2rem;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        color: #777;
+        font-size: 0.95rem;
+      }
+      main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      section {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        margin-bottom: 1rem;
+        color: #555;
+      }
+      ul {
+        list-style: none;
+        margin-top: 1rem;
+      }
+      li {
+        padding: 0.5rem 0;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 2px;
+        font-family: 'Courier New', monospace;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        color: #777;
+        border-top: 1px solid #eee;
+        margin-top: 3rem;
+      }
+    </style>
   </head>
   <body>
-    <header class="site-header">
+    <header>
       <h1>Leezo Clothing</h1>
-      <p class="muted">Simple static landing page (for GitHub Pages)</p>
+      <p>Simple static landing page (for GitHub Pages)</p>
     </header>
 
-    <main class="container">
+    <main>
       <section>
-        <h2>Shop</h2>
+        <h2>Welcome to Leezo</h2>
         <p>
-          This is a lightweight index.html placed at the repository root. For the
-          full Next.js app run locally with <code>npm run dev</code> or deploy
-          the exported site to GitHub Pages using the `gh-pages` branch.
+          This is a lightweight landing page served directly from the repository root on GitHub Pages.
+        </p>
+        <p>
+          <strong>For the full Next.js application:</strong>
         </p>
         <ul>
-          <li><a href="/product/">Product listing (exported site only)</a></li>
-          <li><a href="/category/">Category pages (exported site only)</a></li>
+          <li><code>npm run dev</code> — Start the development server locally</li>
+          <li><code>npm run build && npm run export</code> — Build a static export</li>
+          <li>Deploy to GitHub Pages via the <code>gh-pages</code> branch for the full Next.js site</li>
         </ul>
+        <p style="margin-top: 2rem;">
+          <strong>Repository:</strong> <a href="https://github.com/Yashavanth-L/Leeso" target="_blank">GitHub Repo</a> | 
+          <strong>Docs:</strong> See <code>README.md</code> for development instructions.
+        </p>
       </section>
     </main>
 
     <footer>
-      <p>See the repository README for development and deployment instructions.</p>
+      <p>&copy; 2026 Leezo Clothing | Built with Next.js & React</p>
     </footer>
   </body>
 </html>

@@ -3,10 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   trailingSlash: true,
-  // If you're deploying to a repository page like https://username.github.io/repo
-  // uncomment and set `basePath` and `assetPrefix` to `/repo`.
-  // basePath: '/repo',
-  // assetPrefix: '/repo',
+  // Deploy to https://yashavanth-l.github.io/Leeso/
+  basePath: '/Leeso',
+  assetPrefix: '/Leeso',
 };
 
 module.exports = nextConfig;
