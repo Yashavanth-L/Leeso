@@ -1,3 +1,9 @@
+import getConfig from 'next/config';
+
+// When using next.config.js basePath, we can access it via publicRuntimeConfig or just hardcode for simplicity
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/Leeso' : '';
+
 // simple in-memory dataset for demo purposes
 export const products = [
   {
@@ -5,7 +11,7 @@ export const products = [
     name: 'Essential Cotton Tee',
     categories: ['men-tshirts', 'new-arrivals'],
     price: 39,
-    image: '/assets/new-arrival-1.png',
+    image: `${basePath}/assets/new-arrival-1.png`,
     meta: 'Men · T-Shirts',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
   },
@@ -14,7 +20,7 @@ export const products = [
     name: 'Relaxed Fleece Hoodie',
     categories: ['men-hoodies', 'new-arrivals'],
     price: 69,
-    image: '/assets/new-arrival-2.png',
+    image: `${basePath}/assets/new-arrival-2.png`,
     meta: 'Men · Hoodies',
     sizes: ['S', 'M', 'L', 'XL'],
   },
@@ -23,7 +29,7 @@ export const products = [
     name: 'Lightweight Utility Jacket',
     categories: ['men-jackets', 'new-arrivals'],
     price: 119,
-    image: '/assets/new-arrival-3.png',
+    image: `${basePath}/assets/new-arrival-3.png`,
     meta: 'Men · Jackets',
     sizes: ['M', 'L', 'XL'],
   },
@@ -32,7 +38,7 @@ export const products = [
     name: 'Tapered Chino Pant',
     categories: ['men-pants', 'new-arrivals'],
     price: 79,
-    image: '/assets/new-arrival-4.png',
+    image: `${basePath}/assets/new-arrival-4.png`,
     meta: 'Men · Pants',
     sizes: ['S', 'M', 'L', 'XL'],
   },
@@ -41,17 +47,8 @@ export const products = [
     name: 'Classic Crew Sweater',
     categories: ['men-sweaters', 'best-sellers'],
     price: 89,
-    image: '/assets/sweater.png',
+    image: `${basePath}/assets/sweater.png`,
     meta: 'Men · Sweaters',
     sizes: ['S', 'M', 'L', 'XL'],
   },
-  // {
-  //   id: 'women-legging',
-  //   name: 'Comfort Legging',
-  //   categories: ['women-leggings', 'sale'],
-  //   price: 49,
-  //   image: '/assets/leggings.png',
-  //   meta: 'Women · Leggings',
-  //   sizes: ['XS', 'S', 'M', 'L'],
-  // },
 ];

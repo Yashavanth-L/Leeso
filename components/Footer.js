@@ -3,10 +3,10 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <a href="#" className="brand">
+          <a href="/" className="brand">
             <img
               className="brand-logo-img"
-              src="/assets/leezo-logo.png"
+              src="./assets/leezo-logo.png"
               alt="Leezo logo"
             />
           </a>

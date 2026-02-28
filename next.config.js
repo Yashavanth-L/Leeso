@@ -5,6 +5,9 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
   // Deploy to https://yashavanth-l.github.io/Leeso/
   basePath: isProd ? '/Leeso' : '',
   assetPrefix: isProd ? '/Leeso' : '',

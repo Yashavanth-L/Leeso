@@ -70,14 +70,14 @@ export default function Header() {
     <header className="site-header">
       <div className="container header-inner" onClick={handleNavClick}>
         <div className="header-left">
-          <a href="/" className="brand">
+          <Link href="/" className="brand">
             <img
               className="brand-logo-img"
-              src="/assets/leezo-logo.png"
+              src="./assets/leezo-logo.png"
               alt="Leezo logo"
             />
             {/* <span className="brand-text">Leezo</span> */}
-          </a>
+          </Link>
         </div>
 
         <div className="header-center">
@@ -85,9 +85,8 @@ export default function Header() {
             <ul className="nav-list">
               <li className="nav-item"><Link href="/#new-arrivals">New</Link></li>
               <li
-                className={`nav-item nav-dropdown${
-                  openDropdown === 'collections' ? ' open' : ''
-                }`}
+                className={`nav-item nav-dropdown${openDropdown === 'collections' ? ' open' : ''
+                  }`}
                 onMouseEnter={() => setOpenDropdown('collections')}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
@@ -115,9 +114,8 @@ export default function Header() {
               </li>
 
               <li
-                className={`nav-item nav-dropdown${
-                  openDropdown === 'shop' ? ' open' : ''
-                }`}
+                className={`nav-item nav-dropdown${openDropdown === 'shop' ? ' open' : ''
+                  }`}
                 onMouseEnter={() => setOpenDropdown('shop')}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
@@ -223,9 +221,9 @@ export default function Header() {
                   const thumb = it.image || (prod && prod.image) || '';
                   return (
                     <div className="mini-cart-item" key={it.id}>
-                      <div style={{display:'flex',gap:'0.6rem',alignItems:'center'}}>
-                        {thumb ? <img src={thumb} alt="" style={{width:56,height:56,objectFit:'cover',borderRadius:8}} /> : <div style={{width:56,height:56,background:'#222',borderRadius:8}} />}
-                        <div style={{flex:1}}>
+                      <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                        {thumb ? <img src={thumb} alt="" style={{ width: 56, height: 56, objectFit: 'cover', borderRadius: 8 }} /> : <div style={{ width: 56, height: 56, background: '#222', borderRadius: 8 }} />}
+                        <div style={{ flex: 1 }}>
                           <div className="mini-cart-item-name">{it.name}</div>
                           <div className="mini-cart-item-meta">{it.qty} × ₹{it.price}</div>
                         </div>
