@@ -26,9 +26,9 @@ export default function Header() {
   useEffect(() => {
     const onDocumentClick = (e) => {
       setOpenDropdown(null);
-      // if click happens outside search-box and toggle, close search
-      const searchBox = document.querySelector('.search-box');
-      const toggle = document.querySelector('.search-toggle');
+      // if click happens outside search box and toggle, close search
+      const searchBox = document.querySelector('.header-search');
+      const toggle = document.querySelector('.search-toggle-btn');
       if (searchBox && toggle && !searchBox.contains(e.target) && !toggle.contains(e.target)) {
         setSearchOpen(false);
       }
@@ -73,7 +73,7 @@ export default function Header() {
           <Link href="/" className="brand">
             <img
               className="brand-logo-img"
-              src="./assets/leezo-logo.png"
+              src="/assets/leezo-logo.png"
               alt="Leezo logo"
             />
             {/* <span className="brand-text">Leezo</span> */}
@@ -148,23 +148,28 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="header-search">
-            <input
-              type="text"
-              placeholder="Search products, categories..."
-              aria-label="Search products"
-              value={query}
-              onChange={(e) => {
-                const v = e.target.value;
-                setQuery(v);
-                if (!v) return setSuggestions([]);
-                const q = v.toLowerCase();
-                const list = products
-                  .filter((p) => p.name.toLowerCase().includes(q) || (p.meta && p.meta.toLowerCase().includes(q)))
-                  .slice(0, 6);
-                setSuggestions(list);
-              }}
-            />
+          <div className={`header-search${searchOpen ? ' mobile-open' : ''}`}>
+            <div className="search-input-wrapper">
+              <svg className="input-search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search products, categories..."
+                aria-label="Search products"
+                value={query}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  setQuery(v);
+                  if (!v) return setSuggestions([]);
+                  const q = v.toLowerCase();
+                  const list = products
+                    .filter((p) => p.name.toLowerCase().includes(q) || (p.meta && p.meta.toLowerCase().includes(q)))
+                    .slice(0, 6);
+                  setSuggestions(list);
+                }}
+              />
+            </div>
 
             {suggestions.length > 0 && (
               <ul className="search-suggestions">
@@ -184,15 +189,17 @@ export default function Header() {
 
         <div className="header-right">
           <button
-            className="icon-btn"
-            aria-label="Open search"
+            className="icon-btn search-toggle-btn"
+            aria-label="Toggle search"
             onClick={(e) => {
               e.stopPropagation();
               toggleSearch();
             }}
             title="Search"
           >
-            🔍
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
           </button>
 
           <div className="cart-wrap">
@@ -205,8 +212,10 @@ export default function Header() {
               }}
               title="Cart"
             >
-              🛒
-              <span className="cart-count">{cartCount}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
             </button>
 
             <div className={`mini-cart${cartOpen ? ' open' : ''}`}>
@@ -242,7 +251,11 @@ export default function Header() {
             </div>
           </div>
 
-          <button className="icon-btn account-button" aria-label="Account">🙍</button>
+          <button className="icon-btn account-button" aria-label="Account">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </button>
 
           <button
             className="nav-toggle"

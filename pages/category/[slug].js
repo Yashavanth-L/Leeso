@@ -36,7 +36,7 @@ export default function CategoryPage() {
   return (
     <>
       <Head>
-        <title>Leezo – {title}</title>
+        <title>{`Leezo – ${title}`}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />

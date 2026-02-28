@@ -10,7 +10,6 @@ const nextConfig = {
   },
   // Deploy to https://yashavanth-l.github.io/Leeso/
   basePath: isProd ? '/Leeso' : '',
-  assetPrefix: isProd ? '/Leeso' : '',
 };
 
 module.exports = nextConfig;

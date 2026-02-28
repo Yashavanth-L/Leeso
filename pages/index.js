@@ -11,12 +11,6 @@ export default function Home() {
         <title>Leezo - Modern Clothing</title>
         <meta name="description" content="Leezo - Minimal, modern clothing for everyday wear." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
 
       <Header />
@@ -55,7 +49,7 @@ export default function Home() {
               <h2>New Arrivals</h2>
               <p>Fresh Leezo pieces just landed this week.</p>
             </header>
-            <div className="product-grid">
+            <div className="product-grid mobile-carousel">
               {products
                 .filter((p) => p.categories.includes('new-arrivals'))
                 .map((p) => (
