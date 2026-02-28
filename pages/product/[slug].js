@@ -43,7 +43,7 @@ export default function ProductPage() {
                 // ensure header updates
                 try {
                   window.dispatchEvent(new CustomEvent('cart:update'));
-                } catch (e) {}
+                } catch (e) { }
               }}
             >
               Add to cart
@@ -53,4 +53,17 @@ export default function ProductPage() {
       </main>
     </>
   );
+}
+
+export async function getStaticPaths() {
+  const { products } = require('../../data/products');
+  const paths = products.map(p => ({
+    params: { slug: p.id }
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  return { props: {} };
 }

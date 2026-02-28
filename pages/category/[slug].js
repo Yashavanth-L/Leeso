@@ -90,3 +90,19 @@ export default function CategoryPage() {
     </>
   );
 }
+
+export async function getStaticPaths() {
+  const { products } = require('../../data/products');
+  const categories = new Set();
+  products.forEach(p => p.categories.forEach(c => categories.add(c)));
+
+  const paths = Array.from(categories).map(slug => ({
+    params: { slug }
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  return { props: {} };
+}
