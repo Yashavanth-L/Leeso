@@ -87,8 +87,6 @@ export default function Header() {
               <li
                 className={`nav-item nav-dropdown${openDropdown === 'collections' ? ' open' : ''
                   }`}
-                onMouseEnter={() => setOpenDropdown('collections')}
-                onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
                   className="nav-link dropdown-toggle"
@@ -116,8 +114,6 @@ export default function Header() {
               <li
                 className={`nav-item nav-dropdown${openDropdown === 'shop' ? ' open' : ''
                   }`}
-                onMouseEnter={() => setOpenDropdown('shop')}
-                onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
                   className="nav-link dropdown-toggle"
